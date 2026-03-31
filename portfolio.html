@@ -1,0 +1,1217 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corine Leslie Zone Meli — Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0d2137;
+        --navy2: #132d4a;
+        --teal: #0e7c7b;
+        --teal-lt: #e6f4f4;
+        --amber: #c9882a;
+        --white: #ffffff;
+        --off: #f8f7f4;
+        --gray: #4a5568;
+        --lgray: #8a96a8;
+        --border: #e2e8f0;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family:
+          ‘DM Sans’,
+          sans-serif;
+        font-weight: 300;
+        color: var(–gray);
+        background: var(–off);
+        overflow-x: hidden;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(13, 33, 55, 0.96);
+        backdrop-filter: blur(12px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        height: 64px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .nav-logo {
+        font-family:
+          ‘Cormorant Garamond’,
+          serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(–white);
+        letter-spacing: 0.04em;
+      }
+      .nav-logo span {
+        color: var(–amber);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(–amber);
+      }
+
+      /* ── HERO ── */
+      #hero {
+        background: var(–navy);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 100px 5% 80px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 60% 60% at 80% 50%,
+            rgba(14, 124, 123, 0.13) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 40% 40% at 10% 80%,
+            rgba(201, 136, 42, 0.08) 0%,
+            transparent 60%
+          );
+      }
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 60px 60px;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+      }
+      .hero-tag {
+        display: inline-block;
+        border: 1px solid var(–amber);
+        color: var(–amber);
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 6px 16px;
+        border-radius: 2px;
+        margin-bottom: 2rem;
+        animation: fadeUp 0.6s ease both;
+      }
+      .hero-name {
+        font-family:
+          ‘Cormorant Garamond’,
+          serif;
+        font-size: clamp(3rem, 7vw, 5.5rem);
+        font-weight: 300;
+        line-height: 1.05;
+        color: var(–white);
+        margin-bottom: 1rem;
+        animation: fadeUp 0.6s 0.1s ease both;
+      }
+      .hero-name em {
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .hero-title {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 1.8rem;
+        line-height: 1.7;
+        animation: fadeUp 0.6s 0.2s ease both;
+      }
+      .hero-title strong {
+        color: var(–teal);
+        font-weight: 500;
+      }
+      .hero-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        animation: fadeUp 0.6s 0.3s ease both;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 28px;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        transition: all 0.25s;
+      }
+      .btn-primary {
+        background: var(–teal);
+        color: var(–white);
+      }
+      .btn-primary:hover {
+        background: #0a6665;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(14, 124, 123, 0.35);
+      }
+      .btn-outline {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .btn-outline:hover {
+        border-color: var(–amber);
+        color: var(–amber);
+      }
+      .hero-scroll {
+        position: absolute;
+        bottom: 40px;
+        left: 5%;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: fadeUp 0.6s 0.5s ease both;
+      }
+      .hero-scroll::before {
+        content: ‘’;
+        display: block;
+        width: 40px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* ── SECTIONS ── */
+      section {
+        padding: 100px 5%;
+      }
+      .section-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(–amber);
+        margin-bottom: 0.6rem;
+        font-weight: 500;
+      }
+      .section-title {
+        font-family:
+          ‘Cormorant Garamond’,
+          serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 300;
+        color: var(–navy);
+        margin-bottom: 3rem;
+        line-height: 1.2;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(–teal);
+      }
+      .divider {
+        width: 48px;
+        height: 2px;
+        background: var(–teal);
+        margin-bottom: 3rem;
+      }
+
+      /* ── ABOUT ── */
+      #about {
+        background: var(–white);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: start;
+      }
+      .about-text p {
+        font-size: 1rem;
+        line-height: 1.9;
+        color: var(–gray);
+        margin-bottom: 1.2rem;
+      }
+      .about-text p strong {
+        color: var(–navy);
+        font-weight: 500;
+      }
+      .about-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+      }
+      .stat-card {
+        border-left: 2px solid var(–teal);
+        padding: 1rem 1.2rem;
+        background: var(–off);
+      }
+      .stat-num {
+        font-family:
+          ‘Cormorant Garamond’,
+          serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(–navy);
+        line-height: 1;
+      }
+      .stat-label {
+        font-size: 0.78rem;
+        color: var(–lgray);
+        margin-top: 4px;
+        letter-spacing: 0.05em;
+      }
+      .about-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .info-row {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(–border);
+        font-size: 0.9rem;
+      }
+      .info-row .label {
+        color: var(–lgray);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .info-row .value {
+        color: var(–navy);
+        font-weight: 500;
+        text-align: right;
+      }
+
+      /* ── SKILLS ── */
+      #skills {
+        background: var(–off);
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+      }
+      .skill-card {
+        background: var(–white);
+        border: 1px solid var(–border);
+        padding: 2rem;
+        border-radius: 4px;
+        transition:
+          box-shadow 0.25s,
+          transform 0.25s;
+        position: relative;
+        overflow: hidden;
+      }
+      .skill-card::before {
+        content: ‘’;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(–teal);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s;
+      }
+      .skill-card:hover {
+        box-shadow: 0 12px 32px rgba(13, 33, 55, 0.1);
+        transform: translateY(-4px);
+      }
+      .skill-card:hover::before {
+        transform: scaleX(1);
+      }
+      .skill-icon {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+      .skill-cat {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(–amber);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      .skill-name {
+        font-family:
+          ‘Cormorant Garamond’,
+          serif;
+        font-size: 1.3rem;
+        color: var(–navy);
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+      }
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .tag {
+        background: var(–teal-lt);
+        color: var(–teal);
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        border-radius: 2px;
+        font-weight: 500;
+      }
+
+      /* ── PROJECTS ── */
+      #projects {
+        background: var(–white);
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+      .project-card {
+        border: 1px solid var(–border);
+        border-radius: 4px;
+        overflow: hidden;
+        transition:
+          box-shadow 0.25s,
+          transform 0.25s;
+        background: var(–white);
+      }
+      .project-card:hover {
+        box-shadow: 0 16px 40px rgba(13, 33, 55, 0.12);
+        transform: translateY(-5px);
+      }
+      .project-top {
+        background: var(–navy);
+        padding: 2rem 2rem 1.5rem;
+        position: relative;
+      }
+      .project-num {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+        font-family:
+          ‘Cormorant Garamond’,
+          serif;
+        font-size: 3rem;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.06);
+        line-height: 1;
+      }
+      .project-tag {
+        font-size: 0.68rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(–amber);
+        margin-bottom: 0.8rem;
+      }
+      .project-name {
+        font-family:
+          ‘Cormorant Garamond’,
+          serif;
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: var(–white);
+        line-height: 1.2;
+      }
+      .project-body {
+        padding: 1.5rem 2rem 2rem;
+      }
+      .project-desc {
+        font-size: 0.92rem;
+        line-height: 1.8;
+        color: var(–gray);
+        margin-bottom: 1.2rem;
+      }
+      .project-stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 1.5rem;
+      }
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.82rem;
+        color: var(–teal);
+        text-decoration: none;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+      }
+      .project-link:hover {
+        border-color: var(–teal);
+      }
+      .arrow {
+        font-size: 0.75rem;
+      }
+
+      /* ── EXPERIENCE ── */
+      #experience {
+        background: var(–off);
+      }
+      .exp-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        max-width: 800px;
+      }
+      .exp-item {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 2rem;
+        padding: 2.5rem 0;
+        border-bottom: 1px solid var(–border);
+        position: relative;
+      }
+      .exp-item::before {
+        content: ‘’;
+        position: absolute;
+        left: 130px;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: var(–border);
+      }
+      .exp-dates {
+        font-size: 0.8rem;
+        color: var(–lgray);
+        padding-top: 4px;
+        line-height: 1.6;
+        text-align: right;
+        padding-right: 2rem;
+      }
+      .exp-role {
+        font-family:
+          ‘Cormorant Garamond’,
+          serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(–navy);
+        margin-bottom: 0.2rem;
+      }
+      .exp-company {
+        font-size: 0.85rem;
+        color: var(–teal);
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+      }
+      .exp-bullets {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .exp-bullets li {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: var(–gray);
+        padding-left: 1rem;
+        position: relative;
+      }
+      .exp-bullets li::before {
+        content: ‘▸’;
+        position: absolute;
+        left: 0;
+        color: var(–teal);
+        font-size: 0.7rem;
+        top: 4px;
+      }
+
+      /* ── CONTACT ── */
+      #contact {
+        background: var(–navy);
+        position: relative;
+        overflow: hidden;
+      }
+      #contact::before {
+        content: ‘’;
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 50% 80% at 90% 50%,
+          rgba(14, 124, 123, 0.15) 0%,
+          transparent 70%
+        );
+      }
+      .contact-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 680px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #contact .section-label {
+        text-align: center;
+      }
+      #contact .section-title {
+        color: var(–white);
+        margin-bottom: 1rem;
+      }
+      .contact-sub {
+        color: rgba(255, 255, 255, 0.55);
+        margin-bottom: 3rem;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: left;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .form-field label {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+      }
+      .form-field input,
+      .form-field textarea {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 3px;
+        padding: 12px 16px;
+        color: var(–white);
+        font-family:
+          ‘DM Sans’,
+          sans-serif;
+        font-size: 0.9rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      .form-field input:focus,
+      .form-field textarea:focus {
+        border-color: var(–teal);
+      }
+      .form-field textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+      .form-field input::placeholder,
+      .form-field textarea::placeholder {
+        color: rgba(255, 255, 255, 0.2);
+      }
+      .btn-submit {
+        background: var(–teal);
+        color: var(–white);
+        border: none;
+        cursor: pointer;
+        padding: 14px 40px;
+        border-radius: 3px;
+        font-family:
+          ‘DM Sans’,
+          sans-serif;
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        align-self: flex-start;
+        transition:
+          background 0.25s,
+          transform 0.25s;
+      }
+      .btn-submit:hover {
+        background: #0a6665;
+        transform: translateY(-2px);
+      }
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+      .contact-link {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        transition: color 0.2s;
+      }
+      .contact-link:hover {
+        color: var(–amber);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #081623;
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.25);
+        letter-spacing: 0.06em;
+      }
+      footer span {
+        color: var(–amber);
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 768px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .exp-item {
+          grid-template-columns: 1fr;
+        }
+        .exp-item::before {
+          display: none;
+        }
+        .exp-dates {
+          text-align: left;
+          padding-right: 0;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+
+    <nav>
+      <div class="nav-logo">CL<span>.</span>ZM</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+
+    <section id="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-content">
+        <div class="hero-tag">Available for Werkstudent Roles</div>
+        <h1 class="hero-name">Corine Leslie<br /><em>Zone Meli</em></h1>
+        <p class="hero-title">
+          <strong>Backend Developer &amp; IT Student</strong> — M.Sc.
+          Intelligent Network Systems<br />
+          University of Duisburg-Essen · Node.js · REST APIs · MySQL · React
+        </p>
+        <div class="hero-links">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          <a
+            href="https://github.com/pjtcoco"
+            target="_blank"
+            class="btn btn-outline"
+            >GitHub ↗</a
+          >
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll to explore</div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+      <div class="reveal">
+        <p class="section-label">Who I am</p>
+        <h2 class="section-title">About <em>Me</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm <strong>Corine Leslie Zone Meli</strong>, a software developer
+            and Master's student in Intelligent Network Systems at the
+            University of Duisburg-Essen, Germany.
+          </p>
+          <p>
+            With a background in Computer Engineering from the University of
+            Buea (Cameroon) and hands-on internship experience in both frontend
+            and backend development, I bridge the gap between elegant interfaces
+            and robust server-side logic.
+          </p>
+          <p>
+            I speak <strong>English</strong> (native),
+            <strong>German C1</strong> (certified), and
+            <strong>French C1</strong> — making me a strong fit for
+            international and German-speaking teams alike.
+          </p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-num">3+</div>
+              <div class="stat-label">Years coding experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">5+</div>
+              <div class="stat-label">Projects on GitHub</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">C1</div>
+              <div class="stat-label">German language level</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">3</div>
+              <div class="stat-label">Languages spoken</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-info reveal">
+          <div class="info-row">
+            <span class="label">Location</span>
+            <span class="value">Duisburg, Germany</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Degree</span>
+            <span class="value">M.Sc. Intelligent Network Systems</span>
+          </div>
+          <div class="info-row">
+            <span class="label">University</span>
+            <span class="value">Universität Duisburg-Essen</span>
+          </div>
+          <div class="info-row">
+            <span class="label">B.Sc.</span>
+            <span class="value">Computer Engineering, Uni Buea</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Languages</span>
+            <span class="value">English · German C1 · French C1</span>
+          </div>
+          <div class="info-row">
+            <span class="label">Availability</span>
+            <span class="value" style="color: var(--teal)"
+              >Open to Werkstudent roles</span
+            >
+          </div>
+          <div class="info-row">
+            <span class="label">Email</span>
+            <span class="value">zonemelicorineleslie@gmail.com</span>
+          </div>
+          <div class="info-row" style="border: none">
+            <span class="label">GitHub</span>
+            <span class="value"
+              ><a
+                href="https://github.com/pjtcoco"
+                target="_blank"
+                style="color: var(--teal); text-decoration: none"
+                >github.com/pjtcoco</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+      <div class="reveal">
+        <p class="section-label">What I work with</p>
+        <h2 class="section-title">Technical <em>Skills</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon">⚙️</div>
+          <div class="skill-cat">Backend</div>
+          <div class="skill-name">Server & APIs</div>
+          <div class="skill-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">REST API</span>
+            <span class="tag">JSON</span>
+            <span class="tag">Postman</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🎨</div>
+          <div class="skill-cat">Frontend</div>
+          <div class="skill-name">UI Development</div>
+          <div class="skill-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-cat">Databases</div>
+          <div class="skill-name">Data Storage</div>
+          <div class="skill-tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🛠️</div>
+          <div class="skill-cat">Tools & Workflow</div>
+          <div class="skill-name">Dev Tools</div>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">VS Code</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🌐</div>
+          <div class="skill-cat">Languages</div>
+          <div class="skill-name">Communication</div>
+          <div class="skill-tags">
+            <span class="tag">English — Native</span>
+            <span class="tag">Deutsch — C1</span>
+            <span class="tag">Français — C1</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon">🤝</div>
+          <div class="skill-cat">Soft Skills</div>
+          <div class="skill-name">People & Work</div>
+          <div class="skill-tags">
+            <span class="tag">Teamwork</span>
+            <span class="tag">Fast Learner</span>
+            <span class="tag">Reliable</span>
+            <span class="tag">Analytical</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+      <div class="reveal">
+        <p class="section-label">What I've built</p>
+        <h2 class="section-title">Featured <em>Projects</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-top">
+            <div class="project-num">01</div>
+            <div class="project-tag">Mobile · IoT</div>
+            <div class="project-name">Smart Home App</div>
+          </div>
+          <div class="project-body">
+            <p class="project-desc">
+              A mobile application designed to regulate and control smart home
+              devices remotely. Features real-time device monitoring, user
+              authentication, and a clean control dashboard.
+            </p>
+            <div class="project-stack">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">REST API</span>
+              <span class="tag">MongoDB</span>
+            </div>
+            <a
+              href="https://github.com/pjtcoco/Smart-Home"
+              target="_blank"
+              class="project-link"
+              >View on GitHub <span class="arrow">↗</span></a
+            >
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-top">
+            <div class="project-num">02</div>
+            <div class="project-tag">Web App · Networking</div>
+            <div class="project-name">SkillLink</div>
+          </div>
+          <div class="project-body">
+            <p class="project-desc">
+              A platform connecting users based on skills and professional
+              interests. Includes user profiles, skill-based matching logic, and
+              a full REST API backend for data management.
+            </p>
+            <div class="project-stack">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <a
+              href="https://github.com/pjtcoco/SkillLink"
+              target="_blank"
+              class="project-link"
+              >View on GitHub <span class="arrow">↗</span></a
+            >
+          </div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-top">
+            <div class="project-num">03</div>
+            <div class="project-tag">Web App · Productivity</div>
+            <div class="project-name">Habit Tracker</div>
+          </div>
+          <div class="project-body">
+            <p class="project-desc">
+              A web application for tracking daily habits and personal goals.
+              Features progress visualization, streak tracking, and persistent
+              data storage to keep users on track.
+            </p>
+            <div class="project-stack">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+            </div>
+            <a
+              href="https://github.com/pjtcoco/habit-tracker"
+              target="_blank"
+              class="project-link"
+              >View on GitHub <span class="arrow">↗</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+      <div class="reveal">
+        <p class="section-label">Where I've worked</p>
+        <h2 class="section-title">Work <em>Experience</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item reveal">
+          <div class="exp-dates">07/2023<br />—<br />09/2023</div>
+          <div>
+            <div class="exp-role">Backend Developer Intern</div>
+            <div class="exp-company">Loop Technologies · Buea, Cameroon</div>
+            <ul class="exp-bullets">
+              <li>
+                Designed and deployed RESTful APIs with Node.js and Express,
+                improving data flow between frontend and backend systems.
+              </li>
+              <li>
+                Integrated MySQL databases into backend services, optimizing
+                query performance for data retrieval.
+              </li>
+              <li>
+                Tested and documented APIs using Postman; collaborated closely
+                with frontend developers for seamless integration.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-dates">07/2022<br />—<br />08/2022</div>
+          <div>
+            <div class="exp-role">Frontend Developer Intern</div>
+            <div class="exp-company">Loop Technologies · Buea, Cameroon</div>
+            <ul class="exp-bullets">
+              <li>
+                Built responsive, mobile-friendly web pages using HTML, CSS, and
+                JavaScript, improving cross-device consistency.
+              </li>
+              <li>
+                Integrated REST APIs into frontend applications, enabling
+                dynamic data rendering for end users.
+              </li>
+              <li>
+                Managed source control and team collaboration using Git and
+                GitHub.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp-item reveal">
+          <div class="exp-dates">09/2025<br />—<br />01/2026</div>
+          <div>
+            <div class="exp-role">Warehouse & Logistics Assistant</div>
+            <div class="exp-company">Klemme GmbH · Deutschland · Part-time</div>
+            <ul class="exp-bullets">
+              <li>
+                Operated warehouse management systems, consistently meeting
+                quality and deadline standards.
+              </li>
+              <li>
+                Collaborated effectively in a structured, fast-paced team
+                environment in Germany.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="contact-inner">
+        <p class="section-label">Let's connect</p>
+        <h2 class="section-title">Get in <em>Touch</em></h2>
+        <p class="contact-sub">
+          I'm currently open to Werkstudent and junior developer opportunities
+          in Germany. Feel free to reach out — I'd love to hear from you.
+        </p>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Your Name</label>
+              <input type="text" placeholder="Max Mustermann" required />
+            </div>
+            <div class="form-field">
+              <label>Your Email</label>
+              <input type="email" placeholder="max@company.de" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Subject</label>
+            <input type="text" placeholder="Werkstudent opportunity at..." />
+          </div>
+          <div class="form-field">
+            <label>Message</label>
+            <textarea
+              placeholder="Tell me about the role or opportunity..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message →</button>
+        </form>
+        <div class="contact-links">
+          <a href="mailto:zonemelicorineleslie@gmail.com" class="contact-link"
+            >✉ zonemelicorineleslie@gmail.com</a
+          >
+          <a
+            href="https://github.com/pjtcoco"
+            target="_blank"
+            class="contact-link"
+            >⌥ github.com/pjtcoco</a
+          >
+          <a href="tel:+4915563561216" class="contact-link"
+            >✆ +49 155 63561216</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 <span>Corine Leslie Zone Meli</span> · Duisburg, Germany · Built
+      with care
+    </footer>
+
+    <script>
+      // Scroll reveal
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add("visible"), i * 80);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      // Form submit handler
+      function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector(".btn-submit");
+        btn.textContent = "Message sent ✓";
+        btn.style.background = "#0a6665";
+        setTimeout(() => {
+          btn.textContent = "Send Message →";
+          btn.style.background = "";
+          e.target.reset();
+        }, 3000);
+      }
+
+      // Active nav highlight
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-links a");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 100) current = s.id;
+        });
+        navLinks.forEach((a) => {
+          a.style.color =
+            a.getAttribute("href") === "#" + current ? "var(--amber)" : "";
+        });
+      });
+    </script>
+  </body>
+</html>
